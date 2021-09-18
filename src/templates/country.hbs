@@ -1,15 +1,32 @@
 <article class='country'>
   <h2 class='country__name'>{{name}}</h2>
 
-  <p class='country__capital'>Capital: {{capital}}</p>
+  <div class='country__wrapper'>
+    <ul class='country__content'>
+      <li class='country__item'>
+        <p><b>Capital: </b>{{capital}}</p>
+      </li>
 
-  <p class='country__population'>Population: {{population}}</p>
+      <li class='country__item'>
+        <p><b>Population: </b>{{population}}</p>
+      </li>
 
-  <ul class='country__languages'>Languages:
-    {{#each languages}}
-      <li class='country__language'>{{name}}</li>
-    {{/each}}
-  </ul>
+      <li class='country__item'>
+        <ul>
+          {{#if languages.[1]}}
+            <b class='country__languages'>Languages: </b>
 
-  <img class='country__img' src='{{flag}}' alt='{{name}}' width='320' />
+          {{else}}
+            <b class='country__languages'>Language: </b>
+          {{/if}}
+
+          {{#each languages}}
+            <li class='country__language'>{{name}}</li>
+          {{/each}}
+        </ul>
+      </li>
+    </ul>
+
+    <img class='country__img' src='{{flag}}' alt='Flag of {{name}}' width='240' />
+  </div>
 </article>

@@ -1,5 +1,9 @@
 <ul class='countries'>
   {{#each this}}
-    <li class='countries__item'>{{name}}</li>
+    <li class='countries__item'>
+      <img class='countries__img' src='{{flag}}' alt='Flag of {{name}}' width='20' />
+      
+      <p class='countries__name'>{{name}}</p>
+    </li>
   {{/each}}
 </ul>
